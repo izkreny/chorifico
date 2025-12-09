@@ -1,24 +1,57 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What is Chorifico?
 
-Things you may want to cover:
+Chorifico is an online place for managing all the chores of your choir. :)
 
-* Ruby version
+## What chores?
 
-* System dependencies
+Chorifico is at the moment focused mainly on managing your essential and fundamental chores that are the backbone of your choir:
 
-* Configuration
+* Members details:
+  * First and last name
+  * Email
+  * Mobile phone
+  * Address
+  * Other personal details
+* Events:
+  * Rehearsals (_TODO: Reccuring!_)
+  * Performances
+* Polls about:
+  * Upcoming events
+  * All other kinds of stuff
+* Repertoire, aka Songs:
+  * Lyrics
+  * Recordings of voices
+  * Link to other versions
+* Membership fee, aka Subscriptions, aka Treasury
 
-* Database creation
+## And what about...
 
-* Database initialization
+### Chorifico name? Where does it come from?
 
-* How to run the test suite
+_TODO:_ (chorus + ifico)
 
-* Services (job queues, cache servers, search engines, etc.)
+### New features like...
 
-* Deployment instructions
+_TODO_
 
-* ...
+## Technical details
+
+### Tech stack
+
+* Ruby on Rails
+
+### Entities
+
+* Group (Choir)
+  * Membership
+* Profile / Account / User / Identity
+* Event
+* Poll
+* Document / Article / Post
+  * Lyrics
+  * Event (meeting) notes
+* Comment / Note
+* File
+* Treasury
