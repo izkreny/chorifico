@@ -82,7 +82,7 @@ In order to launch a 1.0 version of the web app, it needs to have:
 
 * Event contains basic data:
   * Name
-  * Status: pending, upcoming, finished, completed, canceled, declined
+  * Status: unconfirmed, confirmed, concluded, canceled, declined
   * Type: Rehearsal, Gig (Performance/Concert) - or just do it as tagging/categorization?
   * Start date and time
   * End date and time
