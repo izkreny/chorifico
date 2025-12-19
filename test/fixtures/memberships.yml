@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group: one
+  user: one
+  start: 2025-12-19
+  end: 2025-12-19
+  status: MyString
+
+two:
+  group: two
+  user: two
+  start: 2025-12-19
+  end: 2025-12-19
+  status: MyString

@@ -45,6 +45,7 @@ In order to launch a 1.0 version of the web app, it needs to have:
 * Basic data:
   * Name
   * username / slug / ?!?
+  * Type
   * Location
   * website URL
   * Description
@@ -64,6 +65,20 @@ In order to launch a 1.0 version of the web app, it needs to have:
 * User can **LOGIN** to their account with:
   * Google account (?)
   * Passkey
+
+## Memberships
+
+* User can be member of group:
+* Fields:
+  * Start date
+  * End date
+  * Status: Active, Inactive, Paused
+  * Roles?!?
+
+### LATER
+
+* Business logic about update, create, destroy...
+* Dependencies -- DO NOT DESTROY!
 
 ## Roles
 
@@ -100,6 +115,7 @@ In order to launch a 1.0 version of the web app, it needs to have:
 * Reccuring events
 * Attachments or links to other entities e.g. Songs, File uploads?
 * Belong to season (either whole year or some specifit date range)
+* Track RSVP (and other?) changes...
 
 ### MAYBE?
 
@@ -139,6 +155,7 @@ In order to launch a 1.0 version of the web app, it needs to have:
 
 ## Later
 
+* Translations aka il8n
 * Comments
 * Seasons
 * Reports
