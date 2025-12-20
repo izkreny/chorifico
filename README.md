@@ -7,11 +7,18 @@ Chorifico is an online place for managing main chores of your choir. 😊
 Chorifico is focused on managing essential and fundamental parts of your choir:
 
 * Members
-* Events: rehearsals & concerts
-* Songbook
+* Events
 ---
+* Notifications
+* Songbook
 * Polls (quick and easy feedback)
 * Subscriptions (membership fees)
+
+### LATER
+
+* Comments / Notes
+* File / Attachments
+* Documents / Articles / Posts
 
 ## And what about...
 
@@ -31,12 +38,11 @@ In order to launch a 1.0 version of the web app, it needs to have:
 
 ### LATER
 
-* Snappy Rails PWA with push notifications
-  * Hotwire
-  * ViewComponents
+* Snappy Rails PWA with push notifications via Hotwire
 
 ### MAYBE?
 
+* ViewComponents
 * Hotwire Native mobile app
 * Integrated PM or Chat?!?
 
@@ -66,17 +72,24 @@ In order to launch a 1.0 version of the web app, it needs to have:
   * Google account (?)
   * Passkey
 
+### MAYBE?
+
+* User / Profile / Account / Identity
+
 ## Memberships
 
-* User can be member of group:
+* User <-> Group association
 * Fields:
   * Start date
   * End date
-  * Status: Active, Inactive, Paused
-  * Roles?!?
+  * Status: Active, Paused, Inactive
+  * Role(s)
 
 ### LATER
 
+* Membership history:
+  * Start date
+  * Status
 * Business logic about update, create, destroy...
 * Dependencies -- DO NOT DESTROY!
 
@@ -173,16 +186,68 @@ In order to launch a 1.0 version of the web app, it needs to have:
 
 * Ruby on Rails
 
-## Entities
+## ERD
 
-* Group (Choir)
-  * Membership (Member)
-* User / Profile / Account / Identity
-* Event
-* Poll
-* Document / Article / Post
-  * Lyrics
-  * Event (meeting) notes
-* Comment / Note
-* File / Attachments
-* Treasury
+```mermaid
+erDiagram
+    USERS {
+        int id PK
+        string name
+        string surname
+        string email UK
+        string mobile_phone
+    }
+
+    GROUPS {
+        int id PK
+        string name
+        string slug UK
+        string type
+        integer location_id
+        string website_url
+        text description
+    }
+
+    MEMBERSHIPS {
+        int id PK
+        int user_id FK
+        int group_id FK
+        enum status "active, inactive, paused"
+        enum role "admin, moderator, member"
+    }
+
+    EVENTS {
+        int id PK
+        int group_id FK
+        int created_by FK
+        int managed_by FK
+        string name
+        enum status "unconfirmed, confirmed, concluded, canceled, declined"
+        enum type "rehearsal, gig"
+        datetime start_datetime
+        interval duration
+        integer location_id
+        text description
+    }
+
+    LOCATION {
+        string name
+        string address
+    }
+
+    EVENT_ATTENDEES {
+        int id PK
+        int user_id FK
+        int event_id FK
+    }
+
+    USERS ||--o{ MEMBERSHIPS : "has"
+    GROUPS ||--o{ MEMBERSHIPS : "has"
+    GROUPS ||--o{ EVENTS : "hosts"
+    USERS ||--o{ EVENTS : "creates"
+    USERS ||--o{ EVENTS : "manages"
+    USERS ||--o{ EVENT_ATTENDEES : "attends"
+    EVENTS ||--o{ EVENT_ATTENDEES : "has"
+    GROUPS }o--|| LOCATION : "has"
+    EVENTS }o--|| LOCATION : "has"
+```
