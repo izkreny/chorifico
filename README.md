@@ -20,12 +20,6 @@ Chorifico is focused on managing essential and fundamental parts of your choir:
 * File / Attachments
 * Documents / Articles / Posts
 
-## And what about...
-
-### Chorifico name? Where does it come from?
-
-TODO: (chorus + ifico)
-
 # Roadmap
 
 In order to launch a 1.0 version of the web app, it needs to have:
@@ -251,3 +245,9 @@ erDiagram
     GROUPS }o--|| LOCATION : "has"
     EVENTS }o--|| LOCATION : "has"
 ```
+
+# FAQ
+
+## Chorifico name? Where does it come from?
+
+TODO: (chorus + ifico)
